@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hop Across 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- Title and scores -->
+    <header class="hud">
+      <h1>Hop Across 3D</h1>
+      <div class="scores">
+        <span class="pill">Score <b id="score">0</b></span>
+        <span class="pill">Best <b id="best">0</b></span>
+      </div>
+    </header>
+
+    <!-- The 3D board. script.js builds the rows, cars and trees inside #world -->
+    <div id="board" class="board">
+      <div id="world" class="world">
+        <!-- The chicken: #turn rotates it, #hop lifts it off the ground. script.js adds its body parts. -->
+        <div id="player" class="player"><div class="turn" id="turn"><div class="hop" id="hop"></div></div></div>
+      </div>
+
+      <!-- Game Over screen (hidden until the player is hit) -->
+      <div id="overlay" class="overlay hidden">
+        <div class="card">
+          <h2>Game over</h2>
+          <p>You hopped <b id="finalScore">0</b> rows</p>
+          <button id="restartBtn" type="button">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- On-screen buttons for touch devices -->
+    <div class="dpad" aria-label="Touch controls">
+      <button data-dir="up"    class="up"    aria-label="Move up">▲</button>
+      <button data-dir="left"  class="left"  aria-label="Move left">◀</button>
+      <button data-dir="down"  class="down"  aria-label="Move down">▼</button>
+      <button data-dir="right" class="right" aria-label="Move right">▶</button>
+    </div>
+
+    <p class="hint">Arrow keys or WASD to move. On a phone, swipe or use the buttons.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
